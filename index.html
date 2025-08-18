@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="pl">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kurs Profesjonalny</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
@@ -13,21 +15,25 @@
       color: #333;
       overflow-x: hidden;
     }
+
     header {
       text-align: center;
       padding: 80px 20px;
     }
+
     header h1 {
       font-size: 3rem;
       font-weight: 700;
       margin: 0;
       animation: fadeInDown 1s ease;
     }
+
     header p {
       font-size: 1.2rem;
       margin: 20px 0 40px;
       animation: fadeIn 2s ease;
     }
+
     .btn-main {
       background: #ff4fa2;
       color: #fff;
@@ -40,9 +46,11 @@
       cursor: pointer;
       display: inline-block;
     }
+
     .btn-main:hover {
       background: #ff82bf;
     }
+
     section {
       max-width: 1100px;
       margin: 80px auto;
@@ -51,6 +59,7 @@
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 40px;
     }
+
     .card {
       background: rgba(255, 255, 255, 0.1);
       border-radius: 20px;
@@ -59,24 +68,29 @@
       box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
       transition: transform .3s;
     }
+
     .card:hover {
       transform: translateY(-10px);
     }
+
     .card h3 {
       margin-top: 0;
       font-size: 1.5rem;
     }
+
     /* FAQ */
     .faq {
       margin: 80px auto;
       max-width: 800px;
       padding: 0 20px;
     }
+
     .faq h2 {
       text-align: center;
       margin-bottom: 40px;
       font-size: 2rem;
     }
+
     .faq-item {
       background: rgba(255, 255, 255, 0.15);
       border-radius: 15px;
@@ -85,25 +99,30 @@
       cursor: pointer;
       transition: background 0.3s;
     }
+
     .faq-item:hover {
       background: rgba(255, 255, 255, 0.25);
     }
+
     .faq-answer {
       display: none;
       margin-top: 10px;
       font-size: 1rem;
     }
+
     /* Opinie */
     .testimonials {
       margin: 80px auto;
       max-width: 900px;
       padding: 0 20px;
     }
+
     .testimonials h2 {
       text-align: center;
       margin-bottom: 40px;
       font-size: 2rem;
     }
+
     .testimonial {
       background: rgba(255, 255, 255, 0.15);
       border-radius: 15px;
@@ -111,12 +130,14 @@
       margin-bottom: 20px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
+
     footer {
       text-align: center;
       padding: 40px;
       font-size: 0.9rem;
       opacity: 0.8;
     }
+
     /* sekcja O mnie */
     .about-me {
       display: flex;
@@ -126,62 +147,105 @@
       padding: 60px 20px;
       max-width: 1100px;
       margin: 0 auto;
+      flex-wrap: wrap;
+      /* żeby elementy mogły się zawijać */
     }
+
     .about-me .profile-photo {
       width: 180px;
       height: 180px;
       border-radius: 50%;
       object-fit: cover;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
     }
+
     .about-me .about-text {
       max-width: 700px;
     }
+
     .about-me h2 {
       font-size: 2rem;
       margin-bottom: 15px;
     }
+
     .about-me p {
       font-size: 1.1rem;
       line-height: 1.6;
     }
+
+    /* RESPONSYWNOŚĆ dla małych ekranów */
+    @media (max-width: 768px) {
+      .about-me {
+        flex-direction: column;
+        /* pionowo */
+        text-align: center;
+      }
+
+      .about-me .about-text {
+        max-width: 100%;
+      }
+    }
+
     @keyframes fadeInDown {
-      from {opacity: 0; transform: translateY(-30px)}
-      to {opacity: 1; transform: translateY(0)}
+      from {
+        opacity: 0;
+        transform: translateY(-30px)
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0)
+      }
     }
+
     @keyframes fadeIn {
-      from {opacity: 0;}
-      to {opacity: 1;}
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
     }
+
     /* MODAL */
     .modal {
-      display: none; /* ukryty na starcie */
+      display: none;
+      /* ukryty na starcie */
       position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0,0,0,0.6);
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.6);
       justify-content: center;
       align-items: center;
       z-index: 1000;
     }
+
     .modal-content {
       background: #fff;
       padding: 30px;
       border-radius: 15px;
       max-width: 400px;
       text-align: center;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
       position: relative;
     }
+
     .modal-content h2 {
       margin-top: 0;
     }
+
     .close {
       position: absolute;
-      top: 10px; right: 15px;
+      top: 10px;
+      right: 15px;
       font-size: 1.5rem;
       cursor: pointer;
       color: #333;
     }
+
     .modal-content input {
       width: 100%;
       padding: 10px;
@@ -189,6 +253,7 @@
       border-radius: 8px;
       border: 1px solid #ccc;
     }
+
     .modal-content button {
       background: #ff4fa2;
       color: white;
@@ -198,9 +263,11 @@
       font-weight: 600;
       cursor: pointer;
     }
+
     .modal-content button:hover {
       background: #ff82bf;
     }
+
     /* Cennik */
     .pricing {
       margin: 80px auto;
@@ -208,55 +275,65 @@
       padding: 0 20px;
       text-align: center;
     }
+
     .pricing h2 {
       font-size: 2.5rem;
       margin-bottom: 40px;
     }
+
     .pricing-plans {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 30px;
     }
+
     .plan {
       background: rgba(255, 255, 255, 0.15);
       padding: 30px;
       border-radius: 20px;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
       transition: transform .3s;
     }
+
     .plan:hover {
       transform: translateY(-10px);
     }
+
     .plan h3 {
       margin-top: 0;
       font-size: 1.8rem;
     }
+
     .price {
       font-size: 2rem;
       margin: 20px 0;
       color: #ff4fa2;
       font-weight: 700;
     }
+
     .plan ul {
       list-style: none;
       padding: 0;
       margin: 20px 0;
       text-align: left;
     }
+
     .plan ul li {
       margin: 10px 0;
     }
   </style>
 </head>
+
 <body>
   <!-- Sekcja O mnie -->
   <section class="about-me">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqq4mujAFh0NXFUyJhq5XAxseDAG7W9KmknA&s" alt="Moje zdjęcie" class="profile-photo">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqq4mujAFh0NXFUyJhq5XAxseDAG7W9KmknA&s"
+      alt="Moje zdjęcie" class="profile-photo">
     <div class="about-text">
       <h2>O mnie</h2>
       <p>
         Cześć! Nazywam się Anna Nowak i od kilku lat zajmuję się rozwojem zawodowym w branży edukacyjnej.
-        Uwielbiam dzielić się wiedzą i pomagać innym w osiąganiu ich celów. 
+        Uwielbiam dzielić się wiedzą i pomagać innym w osiąganiu ich celów.
         Ten kurs powstał z myślą o osobach, które chcą w praktyczny sposób rozwinąć swoje kompetencje.
       </p>
     </div>
@@ -402,4 +479,5 @@
     });
   </script>
 </body>
+
 </html>
